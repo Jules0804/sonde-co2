@@ -1,0 +1,2 @@
+fournisseur,contact,date_devis,famille,reference,designation,quantite,prix_unitaire_ht,prix_total_ht,tva_percent,prix_total_ttc,port_ttc,delai,stock,fiche_technique_recue,certificats_recus,compatibilite_24v,compatibilite_0_2_10v,couple_nm,impedance_entree_y_ohm,consommation_dimensionnement_va,dimensions,garantie,score_traceabilite_0_5,score_prix_0_5,score_disponibilite_0_5,score_documentation_0_5,score_compatibilite_0_5,decision,commentaire
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

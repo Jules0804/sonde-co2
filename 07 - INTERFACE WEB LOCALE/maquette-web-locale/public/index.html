@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#112f2a">
+  <meta name="description" content="Supervision locale de la régulation de ventilation CO₂">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Ventilation CO₂</title>
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Salle de réunion · Prototype</p>
+      <h1>Ventilation CO₂</h1>
+    </div>
+    <div id="connection" class="connection" aria-live="polite"><span></span> Connecté localement</div>
+  </header>
+
+  <aside class="auth-strip" aria-live="polite">
+    <div><strong id="auth-status">Consultation locale</strong><span id="auth-detail">Connexion installateur requise pour modifier ou tester.</span></div>
+    <button id="open-login" class="secondary-button">Connexion</button>
+    <button id="logout" class="secondary-button" hidden>Déconnexion</button>
+  </aside>
+
+  <main>
+    <section id="dashboard" class="view active" aria-labelledby="dashboard-title">
+      <div class="hero-card">
+        <div class="hero-topline">
+          <span id="quality-badge" class="status-badge good">Bonne qualité d’air</span>
+          <span id="updated-at">À l’instant</span>
+        </div>
+        <div class="co2-reading"><strong id="co2-value">824</strong><span>ppm</span></div>
+        <p class="comparison">Consigne <strong id="target-summary">1 000 ppm</strong></p>
+        <div class="meter" aria-label="Niveau de CO₂"><div id="co2-meter"></div></div>
+        <div class="meter-labels"><span>400</span><span>1 000</span><span>1 500+</span></div>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric-card">
+          <span class="metric-icon">↗</span>
+          <p>Ouverture volets</p>
+          <strong><span id="output-value">28</span> %</strong>
+          <small id="voltage-value">2,8 V</small>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon">A</span>
+          <p>Mode</p>
+          <strong id="mode-value">AUTO</strong>
+          <small>Régulation active</small>
+        </article>
+      </div>
+
+      <article class="info-card">
+        <div><span class="pulse"></span><strong>Système normal</strong></div>
+        <p id="system-message">La régulation fonctionne localement. Aucun défaut actif.</p>
+      </article>
+    </section>
+
+    <section id="history" class="view" aria-labelledby="history-title">
+      <div class="section-heading"><div><p class="eyebrow">Dernières 24 heures</p><h2 id="history-title">Historique</h2></div><div class="heading-actions"><button id="clear-history" class="danger-button" hidden>Effacer</button><button id="export-button" class="secondary-button">Exporter CSV</button></div></div>
+      <article class="chart-card">
+        <div class="chart-legend"><span><i class="legend-co2"></i> CO₂</span><span><i class="legend-output"></i> Ouverture</span></div>
+        <svg id="history-chart" viewBox="0 0 720 300" role="img" aria-label="Courbes simulées du CO₂ et de l’ouverture des volets"></svg>
+        <div class="chart-axis"><span>-24 h</span><span>-12 h</span><span>Maintenant</span></div>
+      </article>
+      <div class="metric-grid">
+        <article class="metric-card"><p>Moyenne CO₂</p><strong id="average-co2">—</strong><small>ppm</small></article>
+        <article class="metric-card"><p>Maximum CO₂</p><strong id="maximum-co2">—</strong><small>ppm</small></article>
+      </div>
+    </section>
+
+    <section id="settings" class="view" aria-labelledby="settings-title">
+      <div class="section-heading"><div><p class="eyebrow">Installateur</p><h2 id="settings-title">Réglages</h2></div></div>
+      <p class="auth-required" data-auth-required>Connectez-vous comme installateur pour accéder aux réglages.</p>
+      <form id="settings-form" class="form-card" novalidate>
+        <label>Consigne CO₂ <span><input name="targetPpm" type="number" value="1000" min="800" max="1400"> ppm</span><small>Plage autorisée : 800 à 1 400 ppm</small><em data-error="targetPpm"></em></label>
+        <label>Ouverture minimale <span><input name="minOutputPct" type="number" value="20" min="0" max="80"> %</span><small>Réglée lors de l’équilibrage aéraulique</small><em data-error="minOutputPct"></em></label>
+        <label>Ouverture maximale <span><input name="maxOutputPct" type="number" value="100" min="50" max="100"> %</span><small>Limite mécanique de l’installation</small><em data-error="maxOutputPct"></em></label>
+        <label>Seuil d’alarme CO₂ <span><input name="highAlarmPpm" type="number" value="1500" min="1200" max="2500"> ppm</span><small>Doit rester supérieur à la consigne</small><em data-error="highAlarmPpm"></em></label>
+        <button type="submit" class="primary-button">Enregistrer les réglages</button>
+        <p id="settings-result" class="form-result" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="service" class="view" aria-labelledby="service-title">
+      <div class="section-heading"><div><p class="eyebrow">Mise en service</p><h2 id="service-title">Test actionneur</h2></div></div>
+      <p class="auth-required" data-auth-required>Une session installateur est obligatoire pour commander temporairement les volets.</p>
+      <article class="warning-card"><strong>Mode temporaire</strong><p>Le test remplace brièvement la régulation. Il s’arrête automatiquement et le contrôleur retourne en AUTO.</p></article>
+      <article class="test-card">
+        <p>Choisir une consigne d’ouverture</p>
+        <div class="test-buttons" role="group" aria-label="Consigne de test">
+          <button data-output="0">0 %</button><button data-output="25">25 %</button><button data-output="50">50 %</button><button data-output="75">75 %</button><button data-output="100">100 %</button>
+        </div>
+        <div id="test-active" class="test-active" hidden>
+          <p>Test en cours · sortie <strong id="test-output">—</strong></p>
+          <div id="test-countdown">01:00</div>
+          <button id="stop-test" class="danger-button">Arrêter et revenir en AUTO</button>
+        </div>
+      </article>
+      <article class="diagnostic-card">
+        <div class="diagnostic-heading"><h3>Diagnostic du prototype</h3><button id="refresh-events" class="secondary-button">Actualiser</button></div>
+        <dl><div><dt>Sonde CO₂</dt><dd>Simulée · valide</dd></div><div><dt>Sortie 0–10 V</dt><dd>Simulée</dd></div><div><dt>Firmware</dt><dd>Simulation v0.1</dd></div><div><dt>Dernier défaut</dt><dd>Aucun</dd></div></dl>
+        <h4>Derniers événements</h4>
+        <p id="events-status">Connectez-vous pour consulter le journal technique.</p>
+        <ol id="event-list" class="event-list"></ol>
+      </article>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navigation principale">
+    <button class="active" data-view="dashboard"><span>⌂</span>Accueil</button>
+    <button data-view="history"><span>⌁</span>Historique</button>
+    <button data-view="settings"><span>⚙</span>Réglages</button>
+    <button data-view="service"><span>◇</span>Service</button>
+  </nav>
+  <dialog id="login-dialog" aria-labelledby="login-title">
+    <form id="login-form" class="login-card">
+      <div class="section-heading"><div><p class="eyebrow">Accès protégé</p><h2 id="login-title">Connexion installateur</h2></div><button type="button" id="close-login" class="icon-button" aria-label="Fermer">×</button></div>
+      <p>Prototype local : <strong>installateur / installateur123</strong> ou <strong>administrateur / administrateur123</strong>.</p>
+      <label>Compte
+        <select name="username">
+          <option value="installateur">Installateur</option>
+          <option value="administrateur">Administrateur</option>
+        </select>
+      </label>
+      <label>Mot de passe
+        <input name="password" type="password" autocomplete="current-password" minlength="12" maxlength="128" required>
+      </label>
+      <p id="login-result" class="form-result" aria-live="polite"></p>
+      <button type="submit" class="primary-button">Ouvrir la session</button>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

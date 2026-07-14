@@ -1,0 +1,11 @@
+{
+  "name": "ventilation-co2-simulateur",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-isolation=none test/controller.test.js test/firmware-vectors.test.js test/hardware-contracts.test.js test/service-access.test.js test/config-store.test.js test/history-log.test.js",
+    "simulate": "node src/scenario.js",
+    "vectors": "node src/generate-firmware-vectors.js"
+  }
+}

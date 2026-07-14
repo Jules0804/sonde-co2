@@ -1,0 +1,10 @@
+{
+  "name": "ventilation-co2-pwa-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test --test-isolation=none test/core.test.mjs test/api.test.mjs"
+  }
+}

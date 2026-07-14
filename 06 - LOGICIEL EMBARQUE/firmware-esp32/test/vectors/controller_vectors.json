@@ -1,0 +1,5715 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "simulateur/src/generate-firmware-vectors.js",
+  "description": "Référence de comportement à rejouer par le noyau C++ ESP32.",
+  "scenarios": [
+    {
+      "name": "startup_to_auto",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "timestampSeconds": 0,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 1,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 2,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 3,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 4,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 5,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 6,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 7,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 8,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 9,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 10,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 11,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 12,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 13,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 14,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 15,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 16,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.6,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 17,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.4,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 18,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.2,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 19,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 20,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        }
+      ]
+    },
+    {
+      "name": "rising_co2",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "timestampSeconds": 0,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 1,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 2,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 3,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 4,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 5,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 6,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 7,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 8,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 9,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 10,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 11,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 12,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 13,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 14,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 15,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 16,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.6,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 17,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.4,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 18,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.2,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 19,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 20,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 21,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.6,
+            "filteredPpm": 709.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 22,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.4,
+            "filteredPpm": 719.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 23,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.2,
+            "filteredPpm": 729.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 24,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98,
+            "filteredPpm": 738.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 25,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.8,
+            "filteredPpm": 748,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 26,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.6,
+            "filteredPpm": 757.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 27,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.4,
+            "filteredPpm": 766.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 28,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.2,
+            "filteredPpm": 774.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 29,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97,
+            "filteredPpm": 783.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 30,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.8,
+            "filteredPpm": 792.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 31,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.6,
+            "filteredPpm": 800.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 32,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.4,
+            "filteredPpm": 808.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 33,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.2,
+            "filteredPpm": 816.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 34,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96,
+            "filteredPpm": 824.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 35,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 95.8,
+            "filteredPpm": 832.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 36,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 95.6,
+            "filteredPpm": 840.4,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 37,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 95.4,
+            "filteredPpm": 848,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 38,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 95.2,
+            "filteredPpm": 855.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 39,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 95,
+            "filteredPpm": 862.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 40,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 94.8,
+            "filteredPpm": 870.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 41,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 94.6,
+            "filteredPpm": 877.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 42,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 94.4,
+            "filteredPpm": 884.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 43,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 94.2,
+            "filteredPpm": 891,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 44,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 94,
+            "filteredPpm": 897.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 45,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 93.8,
+            "filteredPpm": 904.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 46,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 93.6,
+            "filteredPpm": 911,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 47,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 93.4,
+            "filteredPpm": 917.4,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 48,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 93.2,
+            "filteredPpm": 923.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 49,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 93,
+            "filteredPpm": 930,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 50,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 92.8,
+            "filteredPpm": 936.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 51,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 92.6,
+            "filteredPpm": 942.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 52,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 92.4,
+            "filteredPpm": 948,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 53,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 92.2,
+            "filteredPpm": 953.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 54,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 92,
+            "filteredPpm": 959.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 55,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 91.8,
+            "filteredPpm": 965.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 56,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 91.6,
+            "filteredPpm": 970.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 57,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 91.4,
+            "filteredPpm": 976.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 58,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 91.2,
+            "filteredPpm": 981.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 59,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 91,
+            "filteredPpm": 986.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 60,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 90.8,
+            "filteredPpm": 991.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 61,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 90.6,
+            "filteredPpm": 997,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 62,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 90.4,
+            "filteredPpm": 1002,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 63,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 90.2,
+            "filteredPpm": 1007,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 64,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 90,
+            "filteredPpm": 1011.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 65,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 89.8,
+            "filteredPpm": 1016.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 66,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 89.6,
+            "filteredPpm": 1021.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 67,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 89.4,
+            "filteredPpm": 1025.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 68,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 89.2,
+            "filteredPpm": 1030.4,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 69,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 89,
+            "filteredPpm": 1034.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 70,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 88.8,
+            "filteredPpm": 1039.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 71,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 88.6,
+            "filteredPpm": 1043.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 72,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 88.4,
+            "filteredPpm": 1047.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 73,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 88.2,
+            "filteredPpm": 1052,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 74,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 88,
+            "filteredPpm": 1056.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 75,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 87.8,
+            "filteredPpm": 1060.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 76,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 87.6,
+            "filteredPpm": 1064.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 77,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 87.4,
+            "filteredPpm": 1068,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 78,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 87.2,
+            "filteredPpm": 1071.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 79,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 87,
+            "filteredPpm": 1075.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 80,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 86.8,
+            "filteredPpm": 1079.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 81,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 86.6,
+            "filteredPpm": 1082.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 82,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 86.4,
+            "filteredPpm": 1086.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 83,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 86.2,
+            "filteredPpm": 1090,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 84,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 86,
+            "filteredPpm": 1093.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 85,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 85.8,
+            "filteredPpm": 1096.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 86,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 85.6,
+            "filteredPpm": 1100.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 87,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 85.4,
+            "filteredPpm": 1103.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 88,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 85.2,
+            "filteredPpm": 1106.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 89,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 85,
+            "filteredPpm": 1110,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 90,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 84.8,
+            "filteredPpm": 1113.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 91,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 84.6,
+            "filteredPpm": 1116.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 92,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 84.4,
+            "filteredPpm": 1119.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 93,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 84.2,
+            "filteredPpm": 1122.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 94,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 84,
+            "filteredPpm": 1125.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 95,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 83.8,
+            "filteredPpm": 1128.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 96,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 83.6,
+            "filteredPpm": 1130.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 97,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 83.4,
+            "filteredPpm": 1133.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 98,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 83.2,
+            "filteredPpm": 1136.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 99,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 83,
+            "filteredPpm": 1139.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 100,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 82.8,
+            "filteredPpm": 1141.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 101,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 82.6,
+            "filteredPpm": 1144.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 102,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 82.4,
+            "filteredPpm": 1147,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 103,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 82.2,
+            "filteredPpm": 1149.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 104,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 82,
+            "filteredPpm": 1152,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 105,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 81.8,
+            "filteredPpm": 1154.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 106,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 81.6,
+            "filteredPpm": 1156.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 107,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 81.4,
+            "filteredPpm": 1159.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 108,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 81.2,
+            "filteredPpm": 1161.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 109,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 81,
+            "filteredPpm": 1163.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 110,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 80.8,
+            "filteredPpm": 1166.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 111,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 80.6,
+            "filteredPpm": 1168.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 112,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 80.4,
+            "filteredPpm": 1170.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 113,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 80.2,
+            "filteredPpm": 1172.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 114,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 80,
+            "filteredPpm": 1174.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 115,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 79.8,
+            "filteredPpm": 1176.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 116,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 79.6,
+            "filteredPpm": 1178.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 117,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 79.4,
+            "filteredPpm": 1180.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 118,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 79.2,
+            "filteredPpm": 1182.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 119,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 79,
+            "filteredPpm": 1184.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 120,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 78.8,
+            "filteredPpm": 1186.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 121,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 78.6,
+            "filteredPpm": 1188.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 122,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 78.4,
+            "filteredPpm": 1190.4,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 123,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 78.2,
+            "filteredPpm": 1192.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 124,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 78,
+            "filteredPpm": 1194,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 125,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 77.8,
+            "filteredPpm": 1195.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 126,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 77.6,
+            "filteredPpm": 1197.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 127,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 77.4,
+            "filteredPpm": 1199.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 128,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 77.2,
+            "filteredPpm": 1200.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 129,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 77,
+            "filteredPpm": 1202.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 130,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 76.8,
+            "filteredPpm": 1204.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 131,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 76.6,
+            "filteredPpm": 1205.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 132,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 76.4,
+            "filteredPpm": 1207.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 133,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 76.2,
+            "filteredPpm": 1208.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 134,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 76,
+            "filteredPpm": 1210.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 135,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 75.8,
+            "filteredPpm": 1211.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 136,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 75.6,
+            "filteredPpm": 1213.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 137,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 75.4,
+            "filteredPpm": 1214.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 138,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 75.2,
+            "filteredPpm": 1216,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 139,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 75,
+            "filteredPpm": 1217.4,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 140,
+            "co2Ppm": 1300,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 74.8,
+            "filteredPpm": 1218.8,
+            "targetPpm": 1000
+          }
+        }
+      ]
+    },
+    {
+      "name": "missing_sensor",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "timestampSeconds": 0,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 1,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 2,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 3,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 4,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 5,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 6,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 7,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 8,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 9,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 10,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 11,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 12,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 13,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 14,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 15,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 16,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.6,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 17,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.4,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 18,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.2,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 19,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 20,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 21,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 688.4,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 22,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 677.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 23,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 665.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 24,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 654.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 25,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 644,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 26,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 633.4,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 27,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 622.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 28,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 612.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 29,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 602.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 30,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 592.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 31,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 582.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 32,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 573.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 33,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 563.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 34,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 554.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 35,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 545.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 36,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 536.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 37,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 527.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 38,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 518.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 39,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 510,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 40,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 501.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 41,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 493.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 42,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 485.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 43,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 477.1,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 44,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 469.2,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 45,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 461.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 46,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 453.8,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 47,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 446.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 48,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 439,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 49,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 50,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_MISSING",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 51,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_MISSING",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 52,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_MISSING",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 53,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_MISSING",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 54,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_MISSING",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 55,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_MISSING",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 56,
+            "co2Ppm": null,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_MISSING",
+            "outputPct": 100,
+            "filteredPpm": 431.7,
+            "targetPpm": 1000
+          }
+        }
+      ]
+    },
+    {
+      "name": "range_fault",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "timestampSeconds": 0,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 1,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 2,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 3,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 4,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 5,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 6,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 7,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 8,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 9,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 10,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 11,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 12,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 13,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 14,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 15,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 16,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.6,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 17,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.4,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 18,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.2,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 19,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 20,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 21,
+            "co2Ppm": 6000,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "SENSOR_RANGE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        }
+      ]
+    },
+    {
+      "name": "force_open",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "timestampSeconds": 0,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 1,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 2,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 3,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 4,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 5,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 6,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 7,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 8,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 9,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 10,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 11,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 12,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 13,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 14,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 15,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 16,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.6,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 17,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.4,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 18,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.2,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 19,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 20,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 21,
+            "co2Ppm": 700,
+            "forceOpen": true
+          },
+          "expected": {
+            "state": "FORCE_OPEN",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        }
+      ]
+    },
+    {
+      "name": "high_co2_alarm",
+      "config": {
+        "filterTauSeconds": 1
+      },
+      "steps": [
+        {
+          "input": {
+            "timestampSeconds": 0,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 1,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 2,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 3,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 4,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 5,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 6,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 7,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 8,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 9,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 10,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 11,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 12,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 13,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 14,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "STARTUP",
+            "fault": "NONE",
+            "outputPct": 100,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 15,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 16,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.6,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 17,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.4,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 18,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.2,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 19,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 20,
+            "co2Ppm": 700,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.8,
+            "filteredPpm": 700,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 21,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.6,
+            "filteredPpm": 1458.5,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 22,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.4,
+            "filteredPpm": 1737.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 23,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.2,
+            "filteredPpm": 1840.3,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 24,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98,
+            "filteredPpm": 1878,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 25,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.8,
+            "filteredPpm": 1891.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 26,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.6,
+            "filteredPpm": 1897,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 27,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.4,
+            "filteredPpm": 1898.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 28,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.2,
+            "filteredPpm": 1899.6,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 29,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97,
+            "filteredPpm": 1899.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 30,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.8,
+            "filteredPpm": 1899.9,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 31,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.6,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 32,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.4,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 33,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.2,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 34,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.165,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 35,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.481,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 36,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 96.796,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 37,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.111,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 38,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.426,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 39,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 97.741,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 40,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.056,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 41,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.371,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 42,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 98.686,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 43,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.001,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 44,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.316,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 45,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.631,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 46,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 47,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 48,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 49,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 50,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 51,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 52,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 53,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 54,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 55,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 56,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 57,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 58,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 59,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 60,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 61,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 62,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 63,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 64,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 65,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 66,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 67,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 68,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 69,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 70,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 71,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 72,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 73,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 74,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 75,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 76,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 77,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 78,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 79,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 80,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "AUTO",
+            "fault": "NONE",
+            "outputPct": 99.946,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 81,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 82,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 83,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 84,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 85,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 86,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 87,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 88,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 89,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 90,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 91,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 92,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 93,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 94,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 95,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 96,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 97,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 98,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 99,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 100,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 101,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 102,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 103,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 104,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 105,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 106,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 107,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 108,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 109,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 110,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 111,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 112,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 113,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 114,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 115,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 116,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 117,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 118,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 119,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 120,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 121,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 122,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 123,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 124,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 125,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 126,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 127,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 128,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 129,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 130,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 131,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 132,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 133,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 134,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 135,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 136,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 137,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 138,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 139,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 140,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        },
+        {
+          "input": {
+            "timestampSeconds": 141,
+            "co2Ppm": 1900,
+            "forceOpen": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "fault": "HIGH_CO2",
+            "outputPct": 100,
+            "filteredPpm": 1900,
+            "targetPpm": 1000
+          }
+        }
+      ]
+    }
+  ]
+}

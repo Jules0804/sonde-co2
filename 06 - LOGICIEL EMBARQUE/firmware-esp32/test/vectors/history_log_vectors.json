@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "simulateur/src/generate-firmware-vectors.js",
+  "description": "Formats compacts historique/événements et capacité à reproduire dans le firmware.",
+  "historyRecord": {
+    "input": {
+      "sequence": 42,
+      "epochSeconds": 1750000000,
+      "uptimeSeconds": 1234,
+      "bootId": 7,
+      "co2Ppm": 987,
+      "outputPct": 34.5,
+      "state": "AUTO",
+      "fault": "NONE",
+      "flags": 3
+    },
+    "expectedHex": "2a00000080e14e68d20400000700db035901010003001c22"
+  },
+  "eventRecord": {
+    "input": {
+      "sequence": 9,
+      "epochSeconds": 1750000010,
+      "uptimeSeconds": 1244,
+      "bootId": 7,
+      "code": "CONFIG_CHANGED",
+      "severity": "INFO",
+      "source": "INSTALLER",
+      "count": 1,
+      "detail0": 41,
+      "detail1": -2
+    },
+    "expectedHex": "090000008ae14e68dc040000070002000002010029000000feffffff0000aecd"
+  },
+  "capacity": {
+    "sampleCount": 10080,
+    "historyBytes": 241920,
+    "eventBytes": 16384,
+    "totalRecordBytes": 258304
+  }
+}

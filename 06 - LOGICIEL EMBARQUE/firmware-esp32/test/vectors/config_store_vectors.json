@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "simulateur/src/generate-firmware-vectors.js",
+  "description": "Format binaire et sélection A/B à reproduire dans le composant C++/NVS.",
+  "goldenRecords": [
+    {
+      "name": "schema1_generation42",
+      "config": {
+        "targetPpm": 950,
+        "minOutputPct": 25.5,
+        "maxOutputPct": 90,
+        "highAlarmPpm": 1450,
+        "alarmDelaySeconds": 90,
+        "testDurationSeconds": 300,
+        "historyPeriodSeconds": 30
+      },
+      "generation": 42,
+      "expectedHex": "56434f32010014002a000000b603ff008403aa055a002c011e000000a9d64f0d"
+    }
+  ],
+  "loadScenarios": [
+    {
+      "name": "virgin",
+      "aHex": null,
+      "bHex": null,
+      "expected": {
+        "config": {
+          "targetPpm": 1000,
+          "minOutputPct": 20,
+          "maxOutputPct": 100,
+          "highAlarmPpm": 1500,
+          "alarmDelaySeconds": 60,
+          "testDurationSeconds": 600,
+          "historyPeriodSeconds": 60
+        },
+        "generation": 0,
+        "source": "FACTORY",
+        "status": "FACTORY_DEFAULTS",
+        "safeToAuto": true
+      }
+    },
+    {
+      "name": "newer_b",
+      "aHex": "56434f32010014000a000000e803c800e803dc053c0058023c000000c179d02c",
+      "bHex": "56434f32010014000b000000b603ff008403aa055a002c011e000000e4bdd472",
+      "expected": {
+        "config": {
+          "targetPpm": 950,
+          "minOutputPct": 25.5,
+          "maxOutputPct": 90,
+          "highAlarmPpm": 1450,
+          "alarmDelaySeconds": 90,
+          "testDurationSeconds": 300,
+          "historyPeriodSeconds": 30
+        },
+        "generation": 11,
+        "source": "B",
+        "status": "OK",
+        "safeToAuto": true
+      }
+    },
+    {
+      "name": "backup_missing",
+      "aHex": "56434f32010014000a000000e803c800e803dc053c0058023c000000c179d02c",
+      "bHex": null,
+      "expected": {
+        "config": {
+          "targetPpm": 1000,
+          "minOutputPct": 20,
+          "maxOutputPct": 100,
+          "highAlarmPpm": 1500,
+          "alarmDelaySeconds": 60,
+          "testDurationSeconds": 600,
+          "historyPeriodSeconds": 60
+        },
+        "generation": 10,
+        "source": "A",
+        "status": "BACKUP_DEGRADED",
+        "safeToAuto": true
+      }
+    }
+  ],
+  "powerCut": {
+    "oldSlotAHex": "56434f320100140064000000e803c800e803dc053c0058023c000000bbc22c1a",
+    "completeNewSlotBHex": "56434f320100140065000000b603ff008403aa055a002c011e0000009e062844",
+    "cases": [
+      {
+        "writtenBytes": 0,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 1,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 2,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 3,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 4,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 5,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 6,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 7,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 8,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 9,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 10,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 11,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 12,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 13,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 14,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 15,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 16,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 17,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 18,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 19,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 20,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 21,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 22,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 23,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 24,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 25,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 26,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 27,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 28,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 29,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 30,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 31,
+        "expected": {
+          "config": {
+            "targetPpm": 1000,
+            "minOutputPct": 20,
+            "maxOutputPct": 100,
+            "highAlarmPpm": 1500,
+            "alarmDelaySeconds": 60,
+            "testDurationSeconds": 600,
+            "historyPeriodSeconds": 60
+          },
+          "generation": 100,
+          "source": "A",
+          "status": "BACKUP_DEGRADED",
+          "safeToAuto": true
+        }
+      },
+      {
+        "writtenBytes": 32,
+        "expected": {
+          "config": {
+            "targetPpm": 950,
+            "minOutputPct": 25.5,
+            "maxOutputPct": 90,
+            "highAlarmPpm": 1450,
+            "alarmDelaySeconds": 90,
+            "testDurationSeconds": 300,
+            "historyPeriodSeconds": 30
+          },
+          "generation": 101,
+          "source": "B",
+          "status": "OK",
+          "safeToAuto": true
+        }
+      }
+    ]
+  }
+}

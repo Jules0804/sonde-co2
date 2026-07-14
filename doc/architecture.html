@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sonde-co2 — Architecture du firmware (état actuel)</title>
+<style>
+  :root{
+    --paper:#ECEFEC; --surface:#F6F8F6; --surface-2:#FFFFFF;
+    --ink:#14201F; --muted:#576863; --faint:#85938E;
+    --border:#D3DAD6; --border-strong:#BAC4BF;
+    --accent:#0C8C7E; --accent-ink:#064F48; --accent-wash:#DCEAE6;
+    --io:#3F5B6C; --io-wash:#DEE6EB;
+    --safe:#A9660F; --safe-wash:#F0E4CF;
+    --fault:#B23E2D; --fault-wash:#F1DAD4;
+    --shadow:0 1px 2px rgba(20,32,31,.06), 0 6px 22px rgba(20,32,31,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0C1312; --surface:#121A18; --surface-2:#17211F;
+      --ink:#E7ECEA; --muted:#95A49E; --faint:#6E7D77;
+      --border:#25322E; --border-strong:#32423D;
+      --accent:#2FC0AD; --accent-ink:#8FE7DA; --accent-wash:#122824;
+      --io:#82A8BE; --io-wash:#152227;
+      --safe:#E1A34C; --safe-wash:#2A2113;
+      --fault:#E6725F; --fault-wash:#2B1512;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 26px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#ECEFEC; --surface:#F6F8F6; --surface-2:#FFFFFF;
+    --ink:#14201F; --muted:#576863; --faint:#85938E;
+    --border:#D3DAD6; --border-strong:#BAC4BF;
+    --accent:#0C8C7E; --accent-ink:#064F48; --accent-wash:#DCEAE6;
+    --io:#3F5B6C; --io-wash:#DEE6EB;
+    --safe:#A9660F; --safe-wash:#F0E4CF;
+    --fault:#B23E2D; --fault-wash:#F1DAD4;
+    --shadow:0 1px 2px rgba(20,32,31,.06), 0 6px 22px rgba(20,32,31,.06);
+  }
+  :root[data-theme="dark"]{
+    --paper:#0C1312; --surface:#121A18; --surface-2:#17211F;
+    --ink:#E7ECEA; --muted:#95A49E; --faint:#6E7D77;
+    --border:#25322E; --border-strong:#32423D;
+    --accent:#2FC0AD; --accent-ink:#8FE7DA; --accent-wash:#122824;
+    --io:#82A8BE; --io-wash:#152227;
+    --safe:#E1A34C; --safe-wash:#2A2113;
+    --fault:#E6725F; --fault-wash:#2B1512;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 26px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:ui-monospace,"SF Mono","JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;}
+  .wrap{max-width:1060px; margin:0 auto; padding:clamp(24px,5vw,64px) clamp(18px,4vw,40px);}
+  .col{max-width:70ch;}
+
+  .eyebrow{
+    font-family:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--accent-ink); font-weight:600;
+  }
+  h1{
+    font-size:clamp(28px,5vw,44px); line-height:1.08; margin:.35em 0 .2em;
+    letter-spacing:-.02em; text-wrap:balance; font-weight:700;
+  }
+  .lede{color:var(--muted); font-size:clamp(16px,2.2vw,19px); max-width:60ch; margin:0;}
+  h2{
+    font-size:clamp(19px,3vw,24px); letter-spacing:-.01em; margin:0 0 .1em;
+    text-wrap:balance; font-weight:680;
+  }
+  h2 .n{
+    font-family:ui-monospace,Menlo,monospace; font-size:.62em; color:var(--accent);
+    font-weight:600; margin-right:.7em; vertical-align:.12em;
+  }
+  section{margin-top:clamp(40px,6vw,68px);}
+  .sec-intro{color:var(--muted); margin:.5em 0 1.6em; max-width:66ch;}
+  p{margin:0 0 1em;}
+  a{color:var(--accent-ink);}
+
+  /* Theme toggle */
+  .themebar{max-width:1060px; margin:0 auto; padding:14px clamp(18px,4vw,40px) 0; display:flex; justify-content:flex-end;}
+  .toggle{
+    font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--muted); background:var(--surface-2); border:1px solid var(--border);
+    border-radius:8px; padding:7px 12px; cursor:pointer;
+  }
+  .toggle:hover{border-color:var(--border-strong); color:var(--ink);}
+  .toggle:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  /* Instrument readout */
+  .readout{
+    margin-top:28px; display:grid; gap:1px; background:var(--border);
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    border:1px solid var(--border); border-radius:14px; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .cell{background:var(--surface-2); padding:16px 18px;}
+  .cell .k{font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint);}
+  .cell .v{font-size:20px; font-weight:680; margin-top:5px; letter-spacing:-.01em; font-variant-numeric:tabular-nums;}
+  .cell .v.warn{color:var(--fault);}
+  .cell .v .u{font-size:13px; color:var(--muted); font-weight:500;}
+
+  /* Layered board diagram */
+  .board{display:flex; flex-direction:column; gap:14px;}
+  .band{
+    border:1px solid var(--border); border-radius:16px; background:var(--surface);
+    padding:18px; box-shadow:var(--shadow);
+  }
+  .band.io{border-color:color-mix(in srgb,var(--io) 40%,var(--border));}
+  .band.core{border-color:color-mix(in srgb,var(--accent) 35%,var(--border)); background:var(--surface-2);}
+  .band-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:14px;}
+  .band-tag{
+    font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    font-weight:700; padding:4px 9px; border-radius:6px;
+  }
+  .band.io .band-tag{color:var(--io); background:var(--io-wash);}
+  .band.core .band-tag{color:var(--accent-ink); background:var(--accent-wash);}
+  .band-desc{color:var(--muted); font-size:13.5px;}
+  .flowlink{
+    text-align:center; color:var(--faint); font-family:ui-monospace,Menlo,monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase; margin:-4px 0;
+  }
+
+  .groups{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px;}
+  .group .g-label{
+    font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:8px; display:flex; align-items:center; gap:7px;
+  }
+  .dot{width:8px; height:8px; border-radius:50%; flex:none;}
+  .dot.pure{background:var(--accent);}
+  .dot.io{background:var(--io);}
+  .chips{display:flex; flex-wrap:wrap; gap:7px;}
+  .chip{
+    font-family:ui-monospace,Menlo,monospace; font-size:12.5px; font-weight:500;
+    padding:5px 10px; border-radius:8px; border:1px solid var(--border-strong);
+    background:var(--surface-2); color:var(--ink); white-space:nowrap;
+  }
+  .chip.key{border-color:color-mix(in srgb,var(--accent) 55%,var(--border-strong)); background:var(--accent-wash); color:var(--accent-ink); font-weight:600;}
+  .chip.hw{border-color:color-mix(in srgb,var(--io) 55%,var(--border-strong)); background:var(--io-wash); color:var(--io); font-weight:600;}
+
+  /* Pipelines */
+  .pipes{display:grid; grid-template-columns:1fr; gap:18px;}
+  @media(min-width:760px){.pipes{grid-template-columns:1fr 1fr;}}
+  .pipe{border:1px solid var(--border); border-radius:14px; background:var(--surface); padding:18px; box-shadow:var(--shadow);}
+  .pipe h3{margin:0 0 4px; font-size:15px; letter-spacing:-.01em;}
+  .pipe .cap{color:var(--muted); font-size:12.5px; margin-bottom:14px;}
+  .steps{display:flex; flex-direction:column; gap:0;}
+  .step{
+    display:flex; align-items:flex-start; gap:12px; position:relative; padding-bottom:16px;
+  }
+  .step:last-child{padding-bottom:0;}
+  .step:not(:last-child)::before{
+    content:""; position:absolute; left:11px; top:24px; bottom:0; width:2px; background:var(--border-strong);
+  }
+  .step .mk{
+    flex:none; width:24px; height:24px; border-radius:50%; display:grid; place-items:center;
+    background:var(--accent-wash); color:var(--accent-ink); border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border));
+    font-family:ui-monospace,Menlo,monospace; font-size:12px; font-weight:700; z-index:1;
+  }
+  .step .body b{font-family:ui-monospace,Menlo,monospace; font-weight:600; font-size:13.5px;}
+  .step .body span{display:block; color:var(--muted); font-size:12.5px;}
+
+  /* Callout */
+  .callout{
+    border:1px solid color-mix(in srgb,var(--safe) 45%,var(--border));
+    background:var(--safe-wash); border-radius:14px; padding:20px 22px;
+    display:flex; gap:16px; align-items:flex-start;
+  }
+  .callout .badge{
+    flex:none; font-family:ui-monospace,Menlo,monospace; font-weight:700; font-size:15px;
+    color:var(--safe); border:1.5px solid var(--safe); border-radius:9px; padding:8px 12px; letter-spacing:.02em;
+    white-space:nowrap;
+  }
+  .callout .txt strong{color:color-mix(in srgb,var(--safe) 75%,var(--ink));}
+  .callout .txt{font-size:14.5px;}
+
+  /* Missing / gaps */
+  .gaps{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px;}
+  .gap{border:1px solid var(--border); border-radius:14px; background:var(--surface); padding:16px 18px;}
+  .gap .top{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px;}
+  .gap h3{margin:0; font-size:14.5px; letter-spacing:-.01em;}
+  .sev{font-family:ui-monospace,Menlo,monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; padding:3px 8px; border-radius:6px;}
+  .sev.block{color:var(--fault); background:var(--fault-wash);}
+  .sev.high{color:var(--safe); background:var(--safe-wash);}
+  .gap ul{margin:0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:7px;}
+  .gap li{font-size:13.5px; color:var(--ink); display:flex; gap:9px; align-items:flex-start;}
+  .gap li::before{content:"—"; color:var(--faint); flex:none;}
+  .gap li .mono{font-size:12.5px; color:var(--muted);}
+
+  .bugs{display:flex; flex-direction:column; gap:10px;}
+  .bug{display:flex; gap:14px; align-items:flex-start; border-left:3px solid var(--fault); padding:4px 0 4px 14px;}
+  .bug .lbl{font-family:ui-monospace,Menlo,monospace; font-size:12px; color:var(--fault); font-weight:700; white-space:nowrap; padding-top:1px;}
+  .bug .d{font-size:14px;}
+  .bug .d .mono{font-size:12.5px; background:var(--surface); padding:1px 5px; border-radius:5px; border:1px solid var(--border);}
+
+  footer{margin-top:clamp(48px,7vw,80px); padding-top:22px; border-top:1px solid var(--border); color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center;}
+  footer .mono{color:var(--faint);}
+</style>
+</head>
+<body>
+
+<div class="themebar">
+  <button class="toggle" id="themeToggle" type="button" aria-label="Basculer le thème clair/sombre">Thème</button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Architecture · état actuel · avant refonte</div>
+    <h1>Régulateur de ventilation CO₂ — firmware ESP32</h1>
+    <p class="lede">Décorticage de la version <strong>production</strong> (firmware ESP-IDF
+    architecturé) : un noyau de décision pur et testable, mais pas encore la machine qui
+    l'exécute. Un <strong>prototype Arduino fonctionnel</strong> (<span class="mono">wifi_ap_web</span>)
+    existe en parallèle — comparaison dans <span class="mono">analyse-proto.md</span>.</p>
+
+    <div class="readout" role="group" aria-label="Chiffres clés">
+      <div class="cell"><div class="k">Cible</div><div class="v">ESP32-S2 <span class="u">Wemos S2 Mini</span></div></div>
+      <div class="cell"><div class="k">Code</div><div class="v">~3 700 <span class="u">lignes C++</span></div></div>
+      <div class="cell"><div class="k">Composants</div><div class="v">20 <span class="u">modules ESP-IDF</span></div></div>
+      <div class="cell"><div class="k">Build (production)</div><div class="v warn">✗ ne compile pas <span class="u">· prototype : ✓ OK</span></div></div>
+      <div class="cell"><div class="k">État sûr</div><div class="v">100 % <span class="u">ventilation</span></div></div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="n">01</span>Vocation</h2>
+    <div class="col">
+      <p>Un capteur <span class="mono">SCD41</span> mesure le CO₂ ambiant ; un cœur de
+      régulation <strong>PI</strong> en déduit un taux d'ouverture de ventilation
+      (0–100 %) pour tenir une cible (défaut&nbsp;1000&nbsp;ppm) ; un DAC
+      <span class="mono">DFR0971</span> (sortie 0–10 V) commande le variateur. Une interface
+      web locale (PWA sur point d'accès Wi-Fi), à rôles, permet configuration et supervision.
+      Mode service par appui long, historique et journal d'événements persistés en flash.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>Architecture en couches</h2>
+    <p class="sec-intro">Un « ports &amp; adapters » fait à la main : le noyau <em>calcule
+    quoi faire</em> (trames, actions, plans, JSON) sans jamais toucher au matériel ; un
+    fin shell d'adaptateurs exécute l'I/O réelle. C'est ce qui rend le noyau testable
+    sur PC.</p>
+
+    <div class="board">
+      <div class="band io">
+        <div class="band-head">
+          <span class="band-tag">Shell · adaptateurs</span>
+          <span class="band-desc">effets de bord, matériel, ESP-IDF</span>
+        </div>
+        <div class="chips">
+          <span class="chip hw">app_main.cpp</span>
+          <span class="chip hw">esp32_i2c_port <span style="opacity:.7">· seul I/O réel</span></span>
+          <span class="chip hw">wifi_ap_web <span style="opacity:.7">· PROTOTYPE fonctionnel</span></span>
+          <span class="chip hw">tests-materiel/* <span style="opacity:.7">· Arduino</span></span>
+        </div>
+      </div>
+
+      <div class="flowlink">▲ intentions&nbsp;: trames · actions · plans ▲</div>
+
+      <div class="band core">
+        <div class="band-head">
+          <span class="band-tag">Noyau pur</span>
+          <span class="band-desc">déterministe · sans I/O · testable sur hôte</span>
+        </div>
+        <div class="groups">
+          <div class="group">
+            <div class="g-label"><span class="dot pure"></span>Contrôle-commande</div>
+            <div class="chips">
+              <span class="chip key">control_core</span>
+              <span class="chip">sensor_cycle</span>
+              <span class="chip">actuator_output</span>
+              <span class="chip key">firmware_app</span>
+            </div>
+          </div>
+          <div class="group">
+            <div class="g-label"><span class="dot pure"></span>HTTP / API</div>
+            <div class="chips">
+              <span class="chip">http_api_contract</span>
+              <span class="chip">api_request_guard</span>
+              <span class="chip">http_server_app</span>
+              <span class="chip">api_handlers</span>
+              <span class="chip">api_payloads</span>
+              <span class="chip">api_response</span>
+            </div>
+          </div>
+          <div class="group">
+            <div class="g-label"><span class="dot pure"></span>Contrats &amp; pilotes</div>
+            <div class="chips">
+              <span class="chip">hardware_contracts</span>
+              <span class="chip">lot1_drivers</span>
+            </div>
+          </div>
+          <div class="group">
+            <div class="g-label"><span class="dot pure"></span>Sécurité</div>
+            <div class="chips">
+              <span class="chip">local_auth</span>
+              <span class="chip">credential_store</span>
+            </div>
+          </div>
+          <div class="group">
+            <div class="g-label"><span class="dot pure"></span>Persistance &amp; transverse</div>
+            <div class="chips">
+              <span class="chip">config_store</span>
+              <span class="chip">history_log</span>
+              <span class="chip">service_mode</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>Les deux flux</h2>
+    <p class="sec-intro">Toute la logique se ramène à deux pipelines : la boucle temps réel
+    de régulation, et le traitement d'une requête HTTP.</p>
+    <div class="pipes">
+      <div class="pipe">
+        <h3>Temps réel — <span class="mono">firmware_app::update</span></h3>
+        <div class="cap">à chaque tick</div>
+        <div class="steps">
+          <div class="step"><div class="mk">1</div><div class="body"><b>sensor_cycle</b><span>lit le SCD41 → ControlInput</span></div></div>
+          <div class="step"><div class="mk">2</div><div class="body"><b>control_core</b><span>régulation PI → ControlSnapshot</span></div></div>
+          <div class="step"><div class="mk">3</div><div class="body"><b>actuator_output</b><span>consigne DAC → I2cWrite</span></div></div>
+          <div class="step"><div class="mk">4</div><div class="body"><b>history_log</b><span>encode HistoryRecord + EventRecord</span></div></div>
+        </div>
+      </div>
+      <div class="pipe">
+        <h3>HTTP — par requête</h3>
+        <div class="cap">11 routes <span class="mono">/api/v1</span></div>
+        <div class="steps">
+          <div class="step"><div class="mk">1</div><div class="body"><b>api_request_guard</b><span>route · Content-Type · taille · auth/CSRF</span></div></div>
+          <div class="step"><div class="mk">2</div><div class="body"><b>http_server_app</b><span>construit un plan d'exécution</span></div></div>
+          <div class="step"><div class="mk">3</div><div class="body"><b>api_handlers</b><span>parse · valide · exécute</span></div></div>
+          <div class="step"><div class="mk">4</div><div class="body"><b>api_payloads / api_response</b><span>JSON succès · JSON erreur + en-têtes</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>Principe de sûreté</h2>
+    <div class="callout">
+      <div class="badge">FAIL&nbsp;→&nbsp;100 %</div>
+      <div class="txt">L'état sûr est la <strong>ventilation à plein débit</strong>. Au
+      démarrage, sur défaut capteur, sur CO₂ trop haut, sur échec d'écriture I²C, ou tant
+      que le matériel n'est pas validé, la sortie est <strong>forcée à 100 %</strong>.
+      Ce repli est câblé dans presque chaque branche des machines à états — c'est la
+      propriété à préserver coûte que coûte lors de la refonte.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span>Ce qui manque pour fonctionner</h2>
+    <p class="sec-intro">Le dépôt contient le noyau de décision, pas la machine qui
+    l'exécute. Les manques, par nature et sévérité.</p>
+    <div class="gaps">
+      <div class="gap">
+        <div class="top"><h3>Référentiel absent</h3><span class="sev high">Bloquant tests</span></div>
+        <ul>
+          <li>Simulateur JS de référence <span class="mono">controller.js</span></li>
+          <li>Contrat OpenAPI + maquette PWA <span class="mono">server.mjs</span></li>
+          <li>Assets de l'interface web embarquée</li>
+        </ul>
+      </div>
+      <div class="gap">
+        <div class="top"><h3>Couches non implémentées</h3><span class="sev block">Bloquant runtime</span></div>
+        <ul>
+          <li>Serveur HTTP réel <span class="mono">esp_http_server</span></li>
+          <li>Orchestration Wi-Fi (AP <span class="mono">VENT-CO2-XXXX</span>)</li>
+          <li>Persistance NVS (config A/B, identifiants) + LittleFS (historique)</li>
+          <li>Génération d'aléa (tokens/CSRF) · source de temps (epoch)</li>
+          <li>Dérivation de mot de passe (KDF) non choisie</li>
+        </ul>
+      </div>
+      <div class="gap">
+        <div class="top"><h3>Intégration matérielle « lot 1 »</h3><span class="sev high">À faire</span></div>
+        <ul>
+          <li>Identification carte (chip_id, flash, scan I²C)</li>
+          <li>Choix &amp; gel des GPIO (SDA/SCL, bouton, LED)</li>
+          <li>Branchement pilotes + boucle FreeRTOS dans <span class="mono">main</span></li>
+        </ul>
+      </div>
+      <div class="gap">
+        <div class="top"><h3>Blocage build</h3><span class="sev block">Bloquant</span></div>
+        <ul>
+          <li>Bug type <span class="mono">array&lt;4&gt;→array&lt;8&gt;</span> à corriger</li>
+          <li>Chaîne ESP-IDF à installer &amp; figer</li>
+          <li>Vrais tests C++ (compilés) inexistants</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span>Défauts concrets relevés</h2>
+    <div class="bugs">
+      <div class="bug"><div class="lbl">NE COMPILE PAS</div><div class="d"><span class="mono">lot1_drivers.cpp:66</span> — <span class="mono">I2cWrite::bytes</span> (array&lt;8&gt;) initialisé depuis <span class="mono">frame.bytes</span> (array&lt;4&gt;). Interdit en C++ standard.</div></div>
+      <div class="bug"><div class="lbl">INCOHÉRENCE</div><div class="d">Adresse I²C du DAC&nbsp;: <span class="mono">0x58</span> dans le code vs <span class="mono">0x5F</span> dans le test matériel.</div></div>
+      <div class="bug"><div class="lbl">DONNÉES</div><div class="d">Compteurs <span class="mono">boot_id</span> / séquences non persistés (repartent de 0) ; <span class="mono">epoch_seconds</span> toujours 0 → historique sans datation.</div></div>
+      <div class="bug"><div class="lbl">COUPLAGE</div><div class="d">La couche « matériel » (<span class="mono">sensor_cycle</span>, <span class="mono">actuator_output</span>) dépend de la couche « contrôle » — dépendance à inverser.</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Analyse de l'existant — dépôt <span class="mono">sonde-co2</span></span>
+    <span class="mono">·</span>
+    <span>Rapport complet&nbsp;: <span class="mono">analyse-old.md</span></span>
+  </footer>
+
+</div>
+
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    function current(){
+      var set = root.getAttribute('data-theme');
+      if(set) return set;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    btn.addEventListener('click', function(){
+      root.setAttribute('data-theme', current() === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
+
+</body>
+</html>

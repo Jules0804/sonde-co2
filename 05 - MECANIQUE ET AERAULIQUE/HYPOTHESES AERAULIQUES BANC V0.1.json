@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "purpose": "Dimensionnement preliminaire du banc aeraulique avant achat du registre et des servomoteurs du lot 2.",
+  "occupancy": {
+    "freshAirPerPersonM3h": 30,
+    "peopleMin": 4,
+    "peopleNominal": 10,
+    "peopleMax": 12
+  },
+  "flowsM3h": [120, 180, 300, 360],
+  "ductDiameterCandidatesMm": [160, 200, 250, 315, 400],
+  "benchSelection": {
+    "targetFlowM3h": 300,
+    "minimumComfortVelocityMs": 1.5,
+    "maximumComfortVelocityMs": 4.5,
+    "preferredVelocityMs": 2.5,
+    "maximumPracticalBenchDiameterMm": 250
+  },
+  "actuatorPrecheck": {
+    "candidateTorqueNm": 5,
+    "maximumDocumentedDamperAreaM2": 0.8,
+    "note": "Ce controle est un filtre papier, pas une garantie. Le couple reel depend du registre, de l'axe, des joints, du montage et de la pression differentielle."
+  },
+  "assumptions": [
+    "30 m3/h/personne est utilise comme base de dimensionnement fonctionnel salle de reunion.",
+    "La plage 1,5 a 4,5 m/s est une hypothese de banc orientee bruit, pertes de charge et encombrement ; ce n'est pas une exigence reglementaire figee.",
+    "Le banc vise un debit nominal de 300 m3/h pour representer une salle de reunion d'environ 10 personnes.",
+    "Le choix final du registre reste conditionne par le releve mecanique et la mesure ou documentation du couple."
+  ]
+}

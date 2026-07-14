@@ -1,0 +1,160 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API locale — Régulation Ventilation CO2",
+    "version": "0.3.0",
+    "description": "Contrat entre le contrôleur ESP32 et l'application PWA locale. Les lectures d'état et d'historique sont accessibles sur le point d'accès local ; la configuration et les commandes exigent une session installateur."
+  },
+  "servers": [{ "url": "/api/v1" }],
+  "paths": {
+    "/session": {
+      "post": {
+        "summary": "Ouvrir une session locale temporaire",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false, "required": ["username", "password"], "properties": { "username": { "type": "string", "maxLength": 64 }, "password": { "type": "string", "minLength": 12, "maxLength": 128 } } } } } },
+        "responses": { "200": { "description": "Session ouverte" }, "401": { "description": "Identifiants invalides" }, "429": { "description": "Trop de tentatives" } }
+      },
+      "get": {
+        "summary": "Lire la session active",
+        "security": [{ "bearerAuth": [] }],
+        "responses": { "200": { "description": "Session active" }, "401": { "description": "Session absente ou expirée" } }
+      },
+      "delete": {
+        "summary": "Fermer la session active",
+        "security": [{ "bearerAuth": [], "csrfToken": [] }],
+        "responses": { "200": { "description": "Session fermée" }, "401": { "description": "Session absente" }, "403": { "description": "Jeton anti-CSRF invalide" } }
+      }
+    },
+    "/status": {
+      "get": {
+        "summary": "Lire l'état instantané",
+        "responses": { "200": { "description": "État courant", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Status" } } } } }
+      }
+    },
+    "/config": {
+      "get": {
+        "summary": "Lire la configuration",
+        "security": [{ "bearerAuth": [] }],
+        "responses": { "200": { "description": "Configuration courante", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Config" } } } } }
+      },
+      "put": {
+        "summary": "Modifier la configuration",
+        "security": [{ "bearerAuth": [], "csrfToken": [] }],
+        "parameters": [{ "name": "If-Match", "in": "header", "required": true, "description": "Révision lue, entre guillemets, par exemple \"4\".", "schema": { "type": "string" } }],
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ConfigInput" } } } },
+        "responses": {
+          "200": { "description": "Configuration validée" },
+          "409": { "description": "Révision devenue obsolète" },
+          "422": { "description": "Valeurs refusées par le contrôleur" },
+          "428": { "description": "Révision If-Match absente" }
+        }
+      }
+    },
+    "/history": {
+      "get": {
+        "summary": "Lire l'historique",
+        "responses": { "200": { "description": "Échantillons horodatés", "content": { "application/json": { "schema": { "type": "object", "required": ["periodSeconds", "samples"], "properties": { "periodSeconds": { "type": "integer" }, "samples": { "type": "array", "items": { "$ref": "#/components/schemas/HistorySample" } } } } } } } }
+      },
+      "delete": {
+        "summary": "Effacer l'historique local",
+        "description": "Action de maintenance reservee au role administrateur. Les reglages et le journal technique ne sont pas effaces.",
+        "security": [{ "bearerAuth": [], "csrfToken": [] }],
+        "responses": {
+          "200": { "description": "Historique efface", "content": { "application/json": { "schema": { "type": "object", "required": ["cleared", "deletedSamples"], "properties": { "cleared": { "type": "boolean" }, "deletedSamples": { "type": "integer", "minimum": 0 } } } } } },
+          "401": { "description": "Session absente" },
+          "403": { "description": "Role insuffisant ou jeton anti-CSRF invalide" }
+        }
+      }
+    },
+    "/events": {
+      "get": {
+        "summary": "Lire le journal technique borné",
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": { "description": "Événements sans texte libre ni identifiant personnel", "content": { "application/json": { "schema": { "type": "object", "required": ["events"], "properties": { "events": { "type": "array", "maxItems": 200, "items": { "$ref": "#/components/schemas/Event" } } } } } } },
+          "401": { "description": "Session installateur requise" }
+        }
+      }
+    },
+    "/output-test": {
+      "post": {
+        "summary": "Démarrer un test actionneur temporisé",
+        "security": [{ "bearerAuth": [], "csrfToken": [] }],
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["outputPct", "durationSeconds"], "properties": { "outputPct": { "type": "number", "enum": [0, 25, 50, 75, 100] }, "durationSeconds": { "type": "integer", "minimum": 5, "maximum": 600 } } } } } },
+        "responses": { "200": { "description": "Test démarré" }, "422": { "description": "Test refusé" } }
+      },
+      "delete": {
+        "summary": "Arrêter le test et revenir en AUTO",
+        "security": [{ "bearerAuth": [], "csrfToken": [] }],
+        "responses": { "200": { "description": "Retour en mode automatique" } }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": { "type": "http", "scheme": "bearer", "bearerFormat": "opaque-session-token" },
+      "csrfToken": { "type": "apiKey", "in": "header", "name": "X-CSRF-Token" }
+    },
+    "schemas": {
+      "ConfigInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["targetPpm", "minOutputPct", "maxOutputPct", "highAlarmPpm"],
+        "properties": {
+          "targetPpm": { "type": "integer", "minimum": 800, "maximum": 1400 },
+          "minOutputPct": { "type": "number", "minimum": 0, "maximum": 80 },
+          "maxOutputPct": { "type": "number", "minimum": 50, "maximum": 100 },
+          "highAlarmPpm": { "type": "integer", "minimum": 1200, "maximum": 2500 }
+        }
+      },
+      "Config": {
+        "allOf": [
+          { "$ref": "#/components/schemas/ConfigInput" },
+          { "type": "object", "required": ["revision"], "properties": { "revision": { "type": "integer", "minimum": 0 } } }
+        ]
+      },
+      "Status": {
+        "type": "object",
+        "required": ["timestamp", "co2Ppm", "outputPct", "outputVolts", "mode", "fault", "sensor", "uptimeSeconds"],
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "co2Ppm": { "type": "integer", "minimum": 0 },
+          "outputPct": { "type": "number", "minimum": 0, "maximum": 100 },
+          "outputVolts": { "type": "number", "minimum": 0, "maximum": 10 },
+          "mode": { "type": "string", "enum": ["STARTUP", "AUTO", "SERVICE", "TEST", "FORCE_OPEN", "FAULT"] },
+          "fault": { "type": ["string", "null"] },
+          "sensor": { "type": "object", "required": ["state", "ageSeconds"], "properties": { "state": { "type": "string", "enum": ["VALID", "MISSING", "RANGE", "STALE"] }, "ageSeconds": { "type": "number", "minimum": 0 }, "temperatureC": { "type": "number" }, "humidityPct": { "type": "number", "minimum": 0, "maximum": 100 } } },
+          "test": { "type": ["object", "null"] },
+          "uptimeSeconds": { "type": "integer", "minimum": 0 }
+        }
+      },
+      "HistorySample": {
+        "type": "object",
+        "required": ["timestamp", "co2Ppm", "outputPct", "state", "fault"],
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "co2Ppm": { "type": "integer" },
+          "outputPct": { "type": "number" },
+          "state": { "type": "string" },
+          "fault": { "type": ["string", "null"] }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sequence", "epochSeconds", "uptimeSeconds", "bootId", "code", "severity", "source", "count", "detail0", "detail1"],
+        "properties": {
+          "sequence": { "type": "integer", "minimum": 0 },
+          "epochSeconds": { "type": "integer", "minimum": 0 },
+          "uptimeSeconds": { "type": "integer", "minimum": 0 },
+          "bootId": { "type": "integer", "minimum": 0 },
+          "code": { "type": "string" },
+          "severity": { "type": "string", "enum": ["INFO", "WARNING", "ERROR", "CRITICAL"] },
+          "source": { "type": "string", "enum": ["SYSTEM", "PHYSICAL", "INSTALLER", "ADMIN", "GTB"] },
+          "count": { "type": "integer", "minimum": 1 },
+          "detail0": { "type": "integer" },
+          "detail1": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

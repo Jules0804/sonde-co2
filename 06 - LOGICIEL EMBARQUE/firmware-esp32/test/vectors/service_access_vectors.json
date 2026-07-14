@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "simulateur/src/generate-firmware-vectors.js",
+  "description": "Référence du bouton et du cycle Wi-Fi à rejouer par le composant C++/ESP-IDF.",
+  "scenarios": [
+    {
+      "name": "button_then_manual_close",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "nowMs": 0,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "OFF",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 0,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 2999,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "OFF",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 0,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3000,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "STARTING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": [
+              "START_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3500,
+            "buttonPressed": false,
+            "wifiEvent": "STARTED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "ACTIVE",
+            "active": true,
+            "remainingMs": 900000,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 5000,
+            "buttonPressed": false,
+            "wifiEvent": null,
+            "closeRequested": true
+          },
+          "expected": {
+            "state": "STOPPING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": [
+              "STOP_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 5100,
+            "buttonPressed": false,
+            "wifiEvent": "STOPPED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "OFF",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 0,
+            "sessionGeneration": 1,
+            "fault": null,
+            "actions": [
+              "INVALIDATE_SESSIONS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "automatic_expiry",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "nowMs": 0,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "OFF",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 0,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3000,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "STARTING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": [
+              "START_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 4000,
+            "buttonPressed": false,
+            "wifiEvent": "STARTED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "ACTIVE",
+            "active": true,
+            "remainingMs": 900000,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 903999,
+            "buttonPressed": false,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "ACTIVE",
+            "active": true,
+            "remainingMs": 1,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 904000,
+            "buttonPressed": false,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "STOPPING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": [
+              "STOP_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 904100,
+            "buttonPressed": false,
+            "wifiEvent": "STOPPED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "OFF",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 0,
+            "sessionGeneration": 1,
+            "fault": null,
+            "actions": [
+              "INVALIDATE_SESSIONS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "start_retry_then_fault",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "nowMs": 0,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "OFF",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 0,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3000,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "STARTING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": [
+              "START_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3100,
+            "buttonPressed": false,
+            "wifiEvent": "FAILED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "STARTING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 2,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": [
+              "START_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3200,
+            "buttonPressed": false,
+            "wifiEvent": "FAILED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "FAULT",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 2,
+            "sessionGeneration": 1,
+            "fault": "WIFI_START_FAILED",
+            "actions": [
+              "INVALIDATE_SESSIONS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "unexpected_stop_and_recovery",
+      "config": {},
+      "steps": [
+        {
+          "input": {
+            "nowMs": 0,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "OFF",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 0,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3000,
+            "buttonPressed": true,
+            "wifiEvent": null,
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "STARTING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": [
+              "START_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 3100,
+            "buttonPressed": false,
+            "wifiEvent": "STARTED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "ACTIVE",
+            "active": true,
+            "remainingMs": 900000,
+            "startAttempts": 1,
+            "sessionGeneration": 0,
+            "fault": null,
+            "actions": []
+          }
+        },
+        {
+          "input": {
+            "nowMs": 5000,
+            "buttonPressed": false,
+            "wifiEvent": "STOPPED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "STARTING",
+            "active": false,
+            "remainingMs": 0,
+            "startAttempts": 1,
+            "sessionGeneration": 1,
+            "fault": "WIFI_UNEXPECTED_STOP",
+            "actions": [
+              "INVALIDATE_SESSIONS",
+              "START_WIFI"
+            ]
+          }
+        },
+        {
+          "input": {
+            "nowMs": 5200,
+            "buttonPressed": false,
+            "wifiEvent": "STARTED",
+            "closeRequested": false
+          },
+          "expected": {
+            "state": "ACTIVE",
+            "active": true,
+            "remainingMs": 900000,
+            "startAttempts": 1,
+            "sessionGeneration": 1,
+            "fault": "WIFI_UNEXPECTED_STOP",
+            "actions": []
+          }
+        }
+      ]
+    }
+  ]
+}

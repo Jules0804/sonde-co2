@@ -1,0 +1,66 @@
+{
+  "source": "DFRobot SEN0536 wiki + inspiration sondes CO2 de gaine CVC existantes",
+  "verified_dimensions_mm": {
+    "sen0536_pcb_length": 32.0,
+    "sen0536_pcb_width": 27.0,
+    "sen0536_product_height": 8.0,
+    "sen0536_pcb_thickness_assumed": 1.6,
+    "sen0536_mount_pitch_x_assumed": 25.0,
+    "sen0536_mount_pitch_y_assumed": 20.0
+  },
+  "duct_probe_architecture_mm": {
+    "external_box_depth_x": 46.0,
+    "external_box_width_y": 74.0,
+    "external_box_height_z": 58.0,
+    "wall": 2.6,
+    "round_flange_diameter": 66.0,
+    "round_flange_thickness": 5.0,
+    "foam_gasket_groove_diameter": 56.0,
+    "probe_tube_outer_diameter": 16.0,
+    "probe_tube_wall": 1.6,
+    "probe_tube_inserted_length": 165.0,
+    "probe_sampling_hole_diameter": 4.5,
+    "probe_sampling_hole_count": 8,
+    "probe_sampling_hole_pitch": 15.0,
+    "probe_closed_tip_length": 8.0,
+    "socket_outer_diameter": 25.0,
+    "socket_clearance_diameter": 16.8,
+    "socket_length": 18.0,
+    "detachable_tube_stop_collar_diameter": 25.0,
+    "detachable_tube_stop_collar_length": 5.0,
+    "bayonet_lug_x": 7.0,
+    "bayonet_lug_y": 4.0,
+    "bayonet_lug_z": 3.0,
+    "flange_screw_clearance": 4.5
+  },
+  "protected_sensor_chamber_mm": {
+    "sensor_chamber_x": 38.0,
+    "sensor_chamber_y": 34.0,
+    "sensor_chamber_z": 24.0,
+    "baffle_thickness": 2.0,
+    "baffle_opening_y": 20.0,
+    "baffle_slot_z": 4.0,
+    "removable_filter_reference_thickness": 1.5
+  },
+  "cable_and_mounting_mm": {
+    "cable_gland_visual_outer_diameter": 16.0,
+    "cable_gland_height": 15.0,
+    "cable_hole_diameter": 8.0,
+    "lid_screw_clearance": 3.4,
+    "lid_screw_pilot": 2.5,
+    "sen0536_standoff_diameter": 5.6,
+    "sen0536_standoff_height": 5.0,
+    "sen0536_screw_clearance": 2.7
+  },
+  "to_verify_before_printing": [
+    "position exacte des trous de fixation SEN0536",
+    "diametre reel du cable Gravity ou du connecteur utilise",
+    "orientation de la carte pour que le SCD41 voie la chambre d'air",
+    "diametre de percage acceptable dans la gaine d'essai",
+    "matiere et epaisseur du joint mousse",
+    "jeu reel du tube demontable dans le manchon apres impression",
+    "ergots de baionnette a ajuster selon tolerance imprimante",
+    "perte de charge et temps de reponse avec mousse filtrante",
+    "tenue mecanique du tube imprime selon orientation d'impression"
+  ]
+}
